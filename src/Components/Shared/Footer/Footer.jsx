@@ -8,7 +8,7 @@ const Footer = () => {
                     <path d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z" className="shape-fill"></path>
                 </svg>
             </div>
-            <footer className="bg-[#8B4513] font-sans tracking-wide">
+            <footer className="bg-[#AB8053] font-sans tracking-wide">
                 <div className="py-16 lg:py-28 px-10 sm:px-10">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
 
@@ -79,8 +79,8 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <div className="text-center py-5 bg-[#8B4513]">
-                    <p className='text-gray-300 text-sm'>© 2024 All Rights Reserved.</p>
+                <div className="text-center py-5 bg-[#AB8053]">
+                    <p className='text-white text-sm'>© 2024 All Rights Reserved.</p>
                 </div>
             </footer>
         </div>
