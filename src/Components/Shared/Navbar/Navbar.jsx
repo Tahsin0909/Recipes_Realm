@@ -1,8 +1,8 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
 
-
+    // toggle in md and sm 
     function handleClick() {
         var collapseMenu = document.getElementById('collapseMenu');
         if (collapseMenu.style.display === 'block') {
@@ -15,7 +15,7 @@ const Navbar = () => {
         <div>
             <header className='flex shadow-sm py-3 px-4 sm:px-10 bg-white font-[sans-serif] min-h-[70px] tracking-wide relative z-50'>
                 <div className='flex flex-wrap items-center justify-between lg:gap-y-4 gap-y-6 gap-x-4 w-full'>
-                    <a href="javascript:void(0)"><img src="https://readymadeui.com/readymadeui.svg" alt="logo" className='w-36' />
+                    <a href="javascript:void(0)"><img src="https://i.ibb.co/NrD88gt/Monogram-Elegant-Wedding-Logo-1-removebg-preview.png" alt="logo" className='lg:w-36 w-20' />
                     </a>
 
                     <div id="collapseMenu"
@@ -39,8 +39,9 @@ const Navbar = () => {
                         <ul
                             className='lg:flex lg:gap-x-10 max-lg:space-y-3 max-lg:fixed max-lg:bg-white max-lg:w-2/3 max-lg:min-w-[300px] max-lg:top-0 max-lg:left-0 max-lg:p-4 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50'>
                             <li className='mb-6 hidden max-lg:block'>
-                                <a href="javascript:void(0)"><img src="https://readymadeui.com/readymadeui.svg" alt="logo" className='w-36' />
-                                </a>
+                                <Link to={'/'}>
+                                    <img src="https://i.ibb.co/NrD88gt/Monogram-Elegant-Wedding-Logo-1-removebg-preview.png" alt="logo" className='w-36' />
+                                </Link>
                             </li>
                             <li
                                 className=''>
@@ -83,6 +84,7 @@ const Navbar = () => {
                         {/* navlink  */}
                     </div>
 
+                    {/* menu icon  */}
                     <div className='flex items-center max-sm:ml-auto space-x-6'>
                         <button id="toggleOpen" onClick={() => handleClick()} className='lg:hidden ml-7'>
                             <svg className="w-7 h-7" fill="#000" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -92,6 +94,7 @@ const Navbar = () => {
                             </svg>
                         </button>
                     </div>
+                    {/* menu icon  */}
                 </div>
             </header>
         </div>
