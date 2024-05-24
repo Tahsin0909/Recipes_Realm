@@ -4,7 +4,7 @@ import SuccessStory from "./SuccessStory/SuccessStory";
 
 const Home = () => {
     return (
-        <div>
+        <div className=" md:px-10 px-5">
             <Banner/>
             <SuccessStory/>
             <DevInfos/>
