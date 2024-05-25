@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 
 const Navbar = () => {
-    const [navToggle, setNAvToggle] = useState(false)
+    const location = useLocation()
+    const [navToggle, setNavToggle] = useState(false)
     // toggle in md and sm 
     function handleClick() {
         var collapseMenu = document.getElementById('collapseMenu');
@@ -14,35 +15,36 @@ const Navbar = () => {
     }
     useEffect(() => {
         const handleScroll = () => {
-            console.log(window.scrollY);
-            if (window.innerWidth > 319 && window.innerWidth < 425) {
-                console.log('smaillDevice');
-                const toggleHeight = 295
-                if (window.scrollY > toggleHeight) {
-                    setNAvToggle(true);
-                } else if (window.scrollY <= toggleHeight) {
-                    setNAvToggle(false);
+            // Check if the current path is the home page
+            if (location.pathname === '/') {
+                // Handle small devices
+                if (window.innerWidth > 319 && window.innerWidth < 425) {
+                    const toggleHeight = 295; // Height at which to toggle nav state
+                    if (window.scrollY > toggleHeight) {
+                        setNavToggle(true); // Show nav if scrolled past toggleHeight
+                    } else if (window.scrollY <= toggleHeight) {
+                        setNavToggle(false); // Hide nav if scrolled above toggleHeight
+                    }
+                }
+                // Handle medium devices
+                if (window.innerWidth > 425 && window.innerWidth <= 768) {
+                    const toggleHeight = 705; // Height at which to toggle nav state
+                    if (window.scrollY > toggleHeight) {
+                        setNavToggle(true); // Show nav if scrolled past toggleHeight
+                    } else if (window.scrollY <= toggleHeight) {
+                        setNavToggle(false); // Hide nav if scrolled above toggleHeight
+                    }
+                }
+                // Handle large devices
+                if (window.innerWidth > 768) {
+                    const toggleHeight = 740; // Height at which to toggle nav state
+                    if (window.scrollY > toggleHeight) {
+                        setNavToggle(true); // Show nav if scrolled past toggleHeight
+                    } else if (window.scrollY <= toggleHeight) {
+                        setNavToggle(false); // Hide nav if scrolled above toggleHeight
+                    }
                 }
             }
-            if (window.innerWidth > 425 && window.innerWidth <= 768) {
-                const toggleHeight = 705;
-                console.log('medium Device');
-                if (window.scrollY > toggleHeight) {
-                    setNAvToggle(true);
-                } else if (window.scrollY <= toggleHeight) {
-                    setNAvToggle(false);
-                }
-            }
-            if (window.innerWidth > 768) {
-                console.log('large Device');
-                const toggleHeight = 740;
-                if (window.scrollY > toggleHeight) {
-                    setNAvToggle(true);
-                } else if (window.scrollY <= toggleHeight) {
-                    setNAvToggle(false);
-                }
-            }
-
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -51,10 +53,10 @@ const Navbar = () => {
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-    }, [navToggle]);
+    }, [navToggle, location.pathname]);
     return (
-        <div className={navToggle ? 'fixed bg-white transition-all shadow-md w-full z-50' : 'fixed bg-transparent w-full z-50'}>
-            <header className='flex shadow-sm py-3 px-4 sm:px-10  font-[sans-serif] min-h-[70px] tracking-wide relative z-50'>
+        <div className={navToggle ? 'fixed bg-white transition-all shadow-md w-full z-50' : location.pathname == '/' ? 'fixed bg-transparent w-full z-50' : 'fixed bg-white shadow-md w-full z-50'}>
+            <header className='flex  py-3 px-4 sm:px-10  font-[sans-serif] min-h-[70px] tracking-wide relative z-50'>
                 <div className='flex flex-wrap items-center justify-between lg:gap-y-4 gap-y-6 gap-x-4 w-full'>
                     <a href="javascript:void(0)"><img src="https://i.ibb.co/Zc77sCg/Monogram-Elegant-Wedding-Logo-4-removebg-preview.png" alt="logo" className='w-16 md:w-24' />
                     </a>
