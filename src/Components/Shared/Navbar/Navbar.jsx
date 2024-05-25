@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-
+import { FcGoogle } from "react-icons/fc";
 const Navbar = () => {
     const location = useLocation()
     const [navToggle, setNavToggle] = useState(false)
@@ -37,7 +37,7 @@ const Navbar = () => {
                 }
                 // Handle large devices
                 if (window.innerWidth > 768) {
-                    const toggleHeight = 740; // Height at which to toggle nav state
+                    const toggleHeight = 730; // Height at which to toggle nav state
                     if (window.scrollY > toggleHeight) {
                         setNavToggle(true); // Show nav if scrolled past toggleHeight
                     } else if (window.scrollY <= toggleHeight) {
@@ -80,7 +80,10 @@ const Navbar = () => {
 
                         {/* navlink  */}
                         <ul
-                            className='lg:flex lg:gap-x-10 max-lg:space-y-3 max-lg:fixed max-lg:bg-white max-lg:w-2/3 max-lg:min-w-[300px] max-lg:top-0 max-lg:left-0 max-lg:p-4 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50'>
+                            className={navToggle ? 'lg:flex lg:gap-x-10 max-lg:space-y-3 max-lg:fixed max-lg:bg-white max-lg:w-2/3 max-lg:min-w-[300px] max-lg:top-0 max-lg:left-0 max-lg:p-4 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50'
+                                : location.pathname == '/' ? 'lg:flex lg:gap-x-10 max-lg:space-y-3 max-lg:fixed max-lg:bg-white max-lg:w-2/3 max-lg:min-w-[300px] max-lg:top-0 max-lg:left-0 max-lg:p-4 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50 lg:text-white'
+                                    : 'lg:flex lg:gap-x-10 max-lg:space-y-3 max-lg:fixed max-lg:bg-white max-lg:w-2/3 max-lg:min-w-[300px] max-lg:top-0 max-lg:left-0 max-lg:p-4 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50'}
+                        >
                             <li className='mb-6 hidden max-lg:block'>
                                 <Link to={'/'}>
                                     <img src="https://i.ibb.co/NrD88gt/Monogram-Elegant-Wedding-Logo-1-removebg-preview.png" alt="logo" className='w-36' />
@@ -91,9 +94,9 @@ const Navbar = () => {
                                 <NavLink
                                     to={`/`}
                                     className={({ isActive, isPending }) =>
-                                        isActive ? "max-lg:border-b max-lg:py-3 max-lg:px-3 relative lg:after:absolute lg:after:bg-black lg:after:w-full lg:after:h-[2px] lg:after:block lg:after:top-6 lg:after:transition-all lg:after:duration-300"
+                                        isActive ? "max-lg:border-b max-lg:py-3 max-lg:px-3 relative lg:after:absolute lg:after:bg-[#AB8053] lg:after:w-full lg:after:h-[2px] lg:after:block lg:after:top-6 lg:after:transition-all lg:after:duration-300"
                                             : isPending ? ""
-                                                : "max-lg:border-b max-lg:py-3 max-lg:px-3 relative lg:hover:after:absolute lg:after:bg-black lg:after:w-0 lg:hover:after:w-full lg:hover:after:h-[2px] lg:after:block lg:after:top-6 lg:after:transition-all lg:after:duration-300"}
+                                                : "max-lg:border-b max-lg:py-3 max-lg:px-3 relative lg:hover:after:absolute lg:after:bg-[#AB8053]  lg:after:w-0 lg:hover:after:w-full lg:hover:after:h-[2px] lg:after:block lg:after:top-6 lg:after:transition-all lg:after:duration-300"}
                                 >
                                     Home
                                 </NavLink>
@@ -103,9 +106,9 @@ const Navbar = () => {
                                 <NavLink
                                     to={`/allRecipes`}
                                     className={({ isActive, isPending }) =>
-                                        isActive ? "max-lg:border-b max-lg:py-3 max-lg:px-3 relative lg:after:absolute lg:after:bg-black lg:after:w-full lg:after:h-[2px] lg:after:block lg:after:top-6 lg:after:transition-all lg:after:duration-300"
+                                        isActive ? "max-lg:border-b max-lg:py-3 max-lg:px-3 relative lg:after:absolute lg:after:bg-[#AB8053]  lg:after:w-full lg:after:h-[2px] lg:after:block lg:after:top-6 lg:after:transition-all lg:after:duration-300"
                                             : isPending ? ""
-                                                : "max-lg:border-b max-lg:py-3 max-lg:px-3 relative lg:hover:after:absolute lg:after:bg-black lg:after:w-0 lg:hover:after:w-full lg:hover:after:h-[2px] lg:after:block lg:after:top-6 lg:after:transition-all lg:after:duration-300"}
+                                                : "max-lg:border-b max-lg:py-3 max-lg:px-3 relative lg:hover:after:absolute lg:after:bg-[#AB8053]  lg:after:w-0 lg:hover:after:w-full lg:hover:after:h-[2px] lg:after:block lg:after:top-6 lg:after:transition-all lg:after:duration-300"}
                                 >
                                     Recipes
                                 </NavLink>
@@ -115,9 +118,9 @@ const Navbar = () => {
                                 <NavLink
                                     to={`/addRecipes`}
                                     className={({ isActive, isPending }) =>
-                                        isActive ? "max-lg:border-b max-lg:py-3 max-lg:px-3 relative lg:after:absolute lg:after:bg-black lg:after:w-full lg:after:h-[2px] lg:after:block lg:after:top-6 lg:after:transition-all lg:after:duration-300"
+                                        isActive ? "max-lg:border-b max-lg:py-3 max-lg:px-3 relative lg:after:absolute lg:after:bg-[#AB8053]  lg:after:w-full lg:after:h-[2px] lg:after:block lg:after:top-6 lg:after:transition-all lg:after:duration-300"
                                             : isPending ? ""
-                                                : "max-lg:border-b max-lg:py-3 max-lg:px-3 relative lg:hover:after:absolute lg:after:bg-black lg:after:w-0 lg:hover:after:w-full lg:hover:after:h-[2px] lg:after:block lg:after:top-6 lg:after:transition-all lg:after:duration-300"}
+                                                : "max-lg:border-b max-lg:py-3 max-lg:px-3 relative lg:hover:after:absolute lg:after:bg-[#AB8053]  lg:after:w-0 lg:hover:after:w-full lg:hover:after:h-[2px] lg:after:block lg:after:top-6 lg:after:transition-all lg:after:duration-300"}
                                 >
                                     AddRecipes
                                 </NavLink>
@@ -129,13 +132,19 @@ const Navbar = () => {
 
                     {/* menu icon  */}
                     <div className='flex items-center max-sm:ml-auto space-x-6'>
+                        <div className="flex gap-1 items-center border border-1 p-1 lg:px-2 rounded-2xl shadow-md">
+                            <img className="w-8 h-8" src="https://i.ibb.co/VjN3HZG/coins-2656376-1-removebg-preview.png" alt="" />
+                            <p className="font-bold">50</p>
+                        </div>
                         <button id="toggleOpen" onClick={() => handleClick()} className='lg:hidden ml-7'>
-                            <svg className="w-7 h-7" fill="#000" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <svg className="w-7 h-7" fill={navToggle ? '#000000' : location.pathname === '/' ? '#ffffff' : '#000000'}
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                 <path fillRule="evenodd"
                                     d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
                                     clipRule="evenodd"></path>
                             </svg>
                         </button>
+                        <FcGoogle  className="md:text-4xl text-3xl hover:scale-[1.2] transition-all delay-100"/>
                     </div>
                     {/* menu icon  */}
                 </div>
