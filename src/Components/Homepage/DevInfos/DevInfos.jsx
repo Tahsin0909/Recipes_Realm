@@ -1,7 +1,7 @@
 
 const DevInfos = () => {
     return (
-        <div>
+        <div className="h-[100vh]">
             DevInfos
         </div>
     );
