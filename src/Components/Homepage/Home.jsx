@@ -4,11 +4,14 @@ import SuccessStory from "./SuccessStory/SuccessStory";
 
 const Home = () => {
     return (
-        <div className=" md:px-10 px-5">
-            <Banner/>
-            <SuccessStory/>
-            <DevInfos/>
+        <div>
+            <Banner />
+            <div className=" md:px-10 px-5">
+                <SuccessStory />
+                <DevInfos />
+            </div>
         </div>
+
     );
 };
 
