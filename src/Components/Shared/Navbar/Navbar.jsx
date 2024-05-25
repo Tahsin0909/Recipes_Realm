@@ -37,7 +37,7 @@ const Navbar = () => {
                 }
                 // Handle large devices
                 if (window.innerWidth > 768) {
-                    const toggleHeight = 730; // Height at which to toggle nav state
+                    const toggleHeight = 500; // Height at which to toggle nav state
                     if (window.scrollY > toggleHeight) {
                         setNavToggle(true); // Show nav if scrolled past toggleHeight
                     } else if (window.scrollY <= toggleHeight) {
@@ -145,6 +145,9 @@ const Navbar = () => {
                             </svg>
                         </button>
                         <FcGoogle  className="md:text-4xl text-3xl hover:scale-[1.2] transition-all delay-100"/>
+                        <div>
+                            <img className="w-8 h-8 hover:scale-[1.2] transition-all delay-100" src="https://i.ibb.co/gd4f9RD/logout-7884039-removebg-preview.png" alt="" />
+                        </div>
                     </div>
                     {/* menu icon  */}
                 </div>
