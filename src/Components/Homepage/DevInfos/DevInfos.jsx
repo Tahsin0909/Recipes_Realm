@@ -3,13 +3,23 @@ import linkedin from '../../../../public/linkedin.png'
 import github from '../../../../public/github.png'
 import SharedButton from "../../Shared/Button/sharedButton";
 import { Link } from "react-router-dom";
+import Resume from '../../../../public/Tahsin_Zaman_MERN.pdf'
 const DevInfos = () => {
+    const HandleDownload = () => {
+        const fileUrl = Resume;
+        const anchor = document.createElement('a');
+        anchor.href = fileUrl;
+        anchor.download = 'Tahsin_Zaman_MERN.pdf';
+        document.body.appendChild(anchor)
+        anchor.click();
+        anchor.remove();
+    }
     return (
-        <div className="lg:my-40">
+        <div className="lg:my-40 md:mt-28">
             <SharedTitle title={"Let's Meet The Developer"} subtitle={'The Visionary Chef in Technology'} />
-            <div className="h-[70vh] lg:mt-4 bg-fixed  rounded-lg" style={{ backgroundImage: 'url(https://i.ibb.co/51KGsK1/istockphoto-1050725852-1024x1024.jpg)', backgroundSize: 'cover', backgroundRepeat: "no-repeat" }}>
+            <div className="lg:h-[70vh] h-[100vh] md:mt-4 bg-fixed  rounded-lg" style={{ backgroundImage: 'url(https://i.ibb.co/51KGsK1/istockphoto-1050725852-1024x1024.jpg)', backgroundSize: 'cover', backgroundRepeat: "no-repeat" }}>
                 <div className="flex lg:gap-10 items-center justify-center flex-col lg:flex-row mt-2 h-full">
-                    <img src={'https://i.ibb.co/M7wtgBc/prof-pic-mine-removebg-preview.png'} className="w-[350px]  -translate-y-5" />
+                    <img src={'https://i.ibb.co/M7wtgBc/prof-pic-mine-removebg-preview.png'} className="lg:w-[350px] md:w-[300px] -translate-y-5" />
                     <div className=" text-white ">
                         <p className="lg:text-4xl font-bold lg:mb-2">Tahsin Zaman</p>
                         <p className="lg:text-2xl font-bold lg:mb-4">MERN Stack Web Developer</p>
@@ -32,8 +42,10 @@ const DevInfos = () => {
                                 </Link>
                             </div>
                         </div>
-                        <div className="mt-6">
-                            <SharedButton text={'Download CV'} />
+                        <div className="mt-6 ">
+                            <Link onClick={() => HandleDownload()} >
+                                <SharedButton text={'Download CV'} />
+                            </Link>
                         </div>
                     </div>
                 </div>
