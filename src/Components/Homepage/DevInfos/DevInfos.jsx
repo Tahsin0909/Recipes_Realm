@@ -17,12 +17,12 @@ const DevInfos = () => {
     return (
         <div className="lg:my-40 md:my-28 my-20">
             <SharedTitle title={"Let's Meet The Developer"} subtitle={'The Visionary Chef in Technology'} />
-            <div className="lg:h-[90vh] md:h-[120vh] h-[160vh] md:mt-4 bg-fixed  rounded-lg" style={{ backgroundImage: 'url(https://i.ibb.co/51KGsK1/istockphoto-1050725852-1024x1024.jpg)', backgroundSize: 'cover', backgroundRepeat: "no-repeat" }}>
+            <div className="lg:h-[90vh] md:h-[150vh] h-[160vh] md:mt-4 bg-fixed  rounded-lg" style={{ backgroundImage: 'url(https://i.ibb.co/51KGsK1/istockphoto-1050725852-1024x1024.jpg)', backgroundSize: 'cover', backgroundRepeat: "no-repeat" }}>
                 <div className="h-full flex justify-center items-center">
-                    <div className="flex lg:flex-row flex-col lg:gap-8 lg:px-20 lg:py-6 md:px-8 md:py-6 px-6 py-6 bg-[#2F4F4F] w-[75vw]  rounded-lg">
+                    <div className="flex lg:flex-row flex-col lg:gap-8 lg:px-20 lg:py-6 md:px-8 md:py-6 px-4 py-4 bg-[#2F4F4F] w-[75vw]  rounded-lg">
                         <div className="lg:w-[60%] flex lg:flex-col md:flex-row flex-col lg:gap-0 md:gap-4 gap-6">
                             <div className="flex flex-col items-center justify-center">
-                                <img src={'https://i.ibb.co/XxnPP7N/prof-pic-mine.png'} className="lg:w-[200px] md:w-[150px] w-[200px]  rounded-3xl" />
+                                <img src={'https://i.ibb.co/XxnPP7N/prof-pic-mine.png'} className="lg:w-[200px] md:w-[150px] w-[150px]  rounded-3xl" />
                                 <div className="flex gap-6 lg:mt-6 mt-3">
                                     <Link to={'https://www.facebook.com/JISAN0909/'} target="_blank" rel="noopener noreferrer" >
                                         <img className="w-6 h-6 hover:scale-105 transition-all" src="https://i.ibb.co/zbF2dR6/facebook.png" alt="" />
@@ -37,11 +37,11 @@ const DevInfos = () => {
                             </div>
                             <div className="lg:my-4 lg:w-full md:w-[70%]">
                                 <p className="lg:text-2xl text-white   md:text-2xl text-xl font-bold lg:mb-2 md:mb-2 mb-1">Tahsin Zaman</p>
-                                <p className="lg:text-xl  text-white text-lg font-bold lg:mb-4  mb-3">MERN Stack Web Developer</p>
-                                <p className="text-white">Aspiring web developer eager to join a dynamic team. Committed to continuous learning and innovation to support company growth. Dedicated to integrity and collaboration in all endeavors.</p>
+                                <p className="lg:text-xl  text-white md:text-lg font-bold lg:mb-4  mb-3">MERN Stack Web Developer</p>
+                                <p className="text-white md:block hidden">Aspiring web developer eager to join a dynamic team. Committed to continuous learning and innovation to support company growth. Dedicated to integrity and collaboration in all endeavors.</p>
                             </div>
                         </div>
-                        <div className=" w-full lg:mt-0 md:mt-10 mt-8">
+                        <div className=" w-full lg:mt-0 md:mt-10 mt-6">
                             {/* education  */}
                             <div className="p-2  shadow-xl">
                                 <div className="flex items-center gap-3 text-white mb-3">
