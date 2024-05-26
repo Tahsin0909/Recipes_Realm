@@ -8,7 +8,7 @@ const AllRecipes = () => {
             .then(res => res.json())
             .then(data => setAllRecipes(data))
     }, [])
-    console.log(allRecipes);
+    // console.log(allRecipes);
     return (
         <div className=" pt-24 md:pt-32 md:px-10 px-5">
             <div className="flex flex-col justify-center items-center lg:gap-14 md:gap-12 gap-10 ">
