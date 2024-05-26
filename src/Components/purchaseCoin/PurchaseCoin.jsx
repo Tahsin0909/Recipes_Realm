@@ -1,9 +1,10 @@
+/* eslint-disable react/no-unescaped-entities */
 import SharedTitle from "../Shared/SharedTitle/SharedTitle";
 
 const PurchaseCoin = () => {
     return (
-        <div className=" pt-24 md:pt-32 md:px-10 px-5">
-            <SharedTitle subtitle={'Simple Steps to More Recipes'} title={'Purchase Coin'} />
+        <div className=" pt-28 md:pt-36 md:px-10 px-5">
+           
             <div className="grid lg:grid-cols-3 md:grid-cols-2  grid-cols-1 justify-center items-center w-fit mx-auto lg:gap-10 gap-10 lg:my-10 md:my-8 my-6">
                 <div
                     className="bg-white rounded-lg overflow-hidden shadow-lg transition-transform transform hover:scale-105 lg:w-[300px]"

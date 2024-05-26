@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { GrLinkNext } from "react-icons/gr";
+import SharedTitle from "../Shared/SharedTitle/SharedTitle";
 const AllRecipes = () => {
     const [allRecipes, setAllRecipes] = useState(null)
     useEffect(() => {
@@ -10,10 +11,11 @@ const AllRecipes = () => {
     }, [])
     // console.log(allRecipes);
     return (
-        <div className=" pt-24 md:pt-32 md:px-10 px-5">
+        <div className=" pt-28 md:pt-36 md:px-10 px-5">
+            <SharedTitle subtitle={'Delicious Recipes from Our Community'} title={'Recipes'} />
             <div className="flex flex-col justify-center items-center lg:gap-14 md:gap-12 gap-10 ">
                 {
-                    allRecipes?.map((recipe, idx) => <div key={idx} className="group flex shadow-lg rounded-lg justify-center lg:gap-6 md:gap-4 gap-2 lg:w-[800px] md:w-[600px]">
+                    allRecipes?.map((recipe, idx) => <div key={idx} className="lg:mt-10 md:mt-8 mt-6 group flex shadow-lg rounded-lg justify-center lg:gap-6 md:gap-4 gap-2 lg:w-[800px] md:w-[600px]">
                         <div>
                             <p className=" absolute bg-[#2F4F4F] bg-opacity-35 lg:translate-x-[320px] lg:translate-y-[250px] md:translate-x-[200px] md:translate-y-[160px] translate-x-[110px] translate-y-[160px] lg:px-4 lg:py-2 md:px-2 md:py-1 p-1 font-bold text-white rounded-lg md:text-base text-xs">Watch: {recipe.watchCount.length}</p>
                             <Link to={`/${idx}?country=${recipe.country}&category=${recipe.category}`}>

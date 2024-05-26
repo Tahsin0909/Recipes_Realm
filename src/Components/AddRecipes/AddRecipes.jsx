@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import '../../../src/index.css'
+import SharedTitle from "../Shared/SharedTitle/SharedTitle";
 const AddRecipes = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = async data => {
@@ -45,6 +46,7 @@ const AddRecipes = () => {
     }
     return (
         <div className=" pt-24 md:pt-32 md:px-10 px-5">
+            <SharedTitle subtitle={'Share Your Culinary Masterpieces'} title={'Add Recipes'} />
             <div className="flex md:justify-center items-center lg:my-10 md:my-8 my-6 ">
                 <form onSubmit={handleSubmit(onSubmit)} className="lg:space-y-8 md:space-y-6 space-y-6 w-full md:w-[82vw] lg:w-[55vw]">
                     {/* <input defaultValue="test" readOnly {...register("example")} /> */}
