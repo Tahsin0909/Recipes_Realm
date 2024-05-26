@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import banner from '../../../../public/banner.mp4'
 import SharedButton from '../../Shared/Button/sharedButton';
 const Banner = () => {
@@ -10,7 +11,15 @@ const Banner = () => {
                 <p className='lg:text-3xl md:text-2xl text-lg text-gray-50'>
                     Discover new flavors, share your favorites, and connect with fellow food lovers
                 </p>
-                <SharedButton text={'Get Started'}></SharedButton>
+                <div className='flex  lg:gap-8 md:gap-6 gap-4'>
+                    <Link to={'/allRecipes'}>
+                        <SharedButton text={'See Recipes'}></SharedButton>
+                    </Link>
+                    <Link to={'/addRecipes'}>
+                        <SharedButton text={'Add Recipes'}></SharedButton>
+                    </Link>
+                </div>
+
             </div>
             <video autoPlay muted loop className='w-full h-full object-cover' >
                 <source src={banner} type='video/mp4' />
