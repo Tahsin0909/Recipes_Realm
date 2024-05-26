@@ -4,12 +4,15 @@ import {
 } from "react-router-dom";
 import './App.css'
 import { router } from './router/AppRoutes'
+import { ContextApi } from './Context/ContextApi';
 
 function App() {
 
   return (
     <React.StrictMode>
-      <RouterProvider router={router} />
+      <ContextApi>
+        <RouterProvider router={router} />
+      </ContextApi>
     </React.StrictMode>
   )
 }

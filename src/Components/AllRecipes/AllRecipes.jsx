@@ -34,8 +34,8 @@ const AllRecipes = () => {
                         <div className="relative flex items-center">
                             <input name="search" type='text' placeholder='Search' onChange={handleInputChange}
                                 className="pr-4 pl-14 py-3 lg:text-lg md:text-md text-sm  text-black rounded lg:w-[500px] md:w-[440px] w-[380px] bg-white border-b border-gray-400 focus:border-b outline-none focus:border-green-600" />
-                            <div className="absolute left-4" onClick={() => handleClick()}>
-                                <img src="https://cdn-icons-png.flaticon.com/128/9367/9367798.png" alt="" className="w-8 h-8" />
+                            <div className="absolute left-4 hover:cursor-pointer active:scale-95 transition-all" onClick={() => handleClick()}>
+                                <img src="https://cdn-icons-png.flaticon.com/128/9367/9367798.png" alt="" className="w-8 h-8 " />
                             </div>
                         </div>
                         <div className="flex lg:gap-10 md:gap-6 gap-6">
@@ -67,7 +67,7 @@ const AllRecipes = () => {
                 {
                     allRecipes?.map((recipe, idx) => <div key={idx} className="lg:mt-10 md:mt-8 mt-6 group flex shadow-lg rounded-lg justify-center lg:gap-6 md:gap-4 gap-2 lg:w-[800px] md:w-[600px]">
                         <div>
-                            <p className=" absolute bg-[#2F4F4F] bg-opacity-35 lg:translate-x-[320px] lg:translate-y-[250px] md:translate-x-[200px] md:translate-y-[160px] translate-x-[110px] translate-y-[160px] lg:px-4 lg:py-2 md:px-2 md:py-1 p-1 font-bold text-white rounded-lg md:text-base text-xs">Watch: {recipe.watchCount.length}</p>
+                            <p className=" absolute bg-[#2F4F4F] bg-opacity-35 lg:translate-x-[300px] lg:translate-y-[250px] md:translate-x-[180px] md:translate-y-[160px] translate-x-[100px] translate-y-[160px] lg:px-4 lg:py-2 md:px-2 md:py-1 p-1 font-bold text-white rounded-lg md:text-base text-xs">Purchase: {recipe.watchCount.length}</p>
                             <Link to={`/${idx}?country=${recipe.country}&category=${recipe.category}`}>
                                 <button className="absolute hidden group-hover:flex items-center lg:gap-2 gap-1 lg:border-2 border lg:translate-x-[140px] lg:translate-y-[120px] md:translate-x-[90px] md:translate-y-[80px] translate-x-[40px] translate-y-[80px] lg:px-4 lg:py-2 p-2 lg:text-lg md:text-base text-sm text-white rounded-full font-bold active:scale-95 transition-all">View Details <GrLinkNext /> </button>
                             </Link>
