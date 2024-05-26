@@ -13,7 +13,7 @@ const Footer = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
 
                         <div className="lg:col-span-2">
-                            <a href='javascript:void(0)'><img src="https://i.ibb.co/drWjwYh/Monogram-Elegant-Wedding-Logo-3-removebg-preview.png" alt="logo"
+                            <a><img src="https://i.ibb.co/drWjwYh/Monogram-Elegant-Wedding-Logo-3-removebg-preview.png" alt="logo"
                                 className='w-44 mb-8' /></a>
                             <p className="text-gray-300 text-sm">Recipes Realm: A full-stack app with ReactJS frontend, MongoDB & ExpressJS backend, Firebase auth. Explore, share and discover recipes.</p>
                         </div>

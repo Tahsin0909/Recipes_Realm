@@ -58,7 +58,7 @@ const Navbar = () => {
         <div className={navToggle ? 'fixed bg-white transition-all shadow-md w-full z-50' : location.pathname == '/' ? 'fixed bg-transparent w-full z-50' : 'fixed bg-white shadow-md w-full z-50'}>
             <header className='flex  py-3 px-4 sm:px-10  font-[sans-serif] min-h-[70px] tracking-wide relative z-50'>
                 <div className='flex flex-wrap items-center justify-between lg:gap-y-4 gap-y-6 gap-x-4 w-full'>
-                    <a href="javascript:void(0)"><img src="https://i.ibb.co/Zc77sCg/Monogram-Elegant-Wedding-Logo-4-removebg-preview.png" alt="logo" className='w-16 md:w-24' />
+                    <a href=""><img src="https://i.ibb.co/Zc77sCg/Monogram-Elegant-Wedding-Logo-4-removebg-preview.png" alt="logo" className='w-16 md:w-24' />
                     </a>
 
                     <div id="collapseMenu"

@@ -1,9 +1,8 @@
 import { useForm } from "react-hook-form";
-import SharedButton from "../Shared/Button/sharedButton";
 import axios from "axios";
-
+import '../../../src/index.css'
 const AddRecipes = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = async data => {
         const image = data.image[0]
         // console.log(image);
@@ -37,6 +36,7 @@ const AddRecipes = () => {
                     createdAt: "timestamp"
                 }
                 console.log(newRecipes);
+                reset()
             }
         }
         catch {
@@ -129,10 +129,12 @@ const AddRecipes = () => {
                     </div>
 
 
+                    <div className="flex justify-center w-full">
+                        <button type="submit" className="w-fit inputButton">
+                            Add Recipes
+                        </button>
+                    </div>
 
-                    <button type="submit" className="flex justify-center w-full">
-                        <SharedButton text={'Add Recipes'} />
-                    </button>
                 </form>
             </div>
             {/* preview  */}
