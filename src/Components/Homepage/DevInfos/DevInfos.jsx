@@ -5,15 +5,7 @@ import github from '../../../../public/github.png'
 import { Link } from "react-router-dom";
 // import Resume from '../../../../public/Tahsin_Zaman_MERN.pdf'
 const DevInfos = () => {
-    // const HandleDownload = () => {
-    //     const fileUrl = Resume;
-    //     const anchor = document.createElement('a');
-    //     anchor.href = fileUrl;
-    //     anchor.download = 'Tahsin_Zaman_MERN.pdf';
-    //     document.body.appendChild(anchor)
-    //     anchor.click();
-    //     anchor.remove();
-    // }
+
     return (
         <div className="lg:my-40 md:my-28 my-20">
             <SharedTitle title={"Let's Meet The Developer"} subtitle={'The Visionary Chef in Technology'} />

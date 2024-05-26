@@ -1,0 +1,63 @@
+[
+    {
+      "recipeName": "Spaghetti Carbonara",
+      "recipeImage": "https://i.ibb.co/znJNZwk/carbonara-horizontal-three-By-Two-Medium-At2-X-v2.jpg",
+      "ingredients": "Spaghetti, Eggs, Pancetta, Pecorino Cheese, Pepper",
+      "country": "Italy",
+      "category": "Pasta",
+      "creatorEmail": "chef1@example.com",
+      "creatorName": "Chef Luigi",
+      "creatorPhotoUrl": "https://i.ibb.co/LnbRVVf/smiley-handsome-man-posing-1.jpg",
+      "watchCount": ["viewer7@example.com","viewer8@example.com" , "viewer9@example.com","viewer8@example.com","viewer8@example.com"],
+      "createdAt": "2024-05-01T12:00:00Z"
+    },
+    {
+      "recipeName": "Chicken Tikka Masala",
+      "recipeImage": "https://i.ibb.co/Jnt1rym/Chicken-Tikka-Masala-1200x1200.webp",
+      "ingredients": "Chicken, Yogurt, Tomato, Onion, Spices",
+      "country": "India",
+      "category": "Curry",
+      "creatorEmail": "chef2@example.com",
+      "creatorName": "Chef Ayesha",
+      "creatorPhotoUrl": "https://i.ibb.co/bKBrtZT/handsome-young-man-with-arms-crossed-white-background-1.jpg",
+      "watchCount": ["viewer7@example.com", "viewer8@example.com", "viewer9@example.com"],
+      "createdAt": "2024-04-25T15:30:00Z"
+    },
+    {
+      "recipeName": "Sushi",
+      "recipeImage": "https://i.ibb.co/7rc9SWF/Maki-zushi.webp",
+      "ingredients": "Rice, Nori, Fish, Soy Sauce, Wasabi",
+      "country": "Japan",
+      "category": "Seafood",
+      "creatorEmail": "chef3@example.com",
+      "creatorName": "Chef Saito",
+      "creatorPhotoUrl": "https://i.ibb.co/N3tcvhy/portrait-man-laughing-1.jpg",
+      "watchCount": ["viewer7@example.com", "viewer8@example.com", "viewer9@example.com","viewer8@example.com"],
+      "createdAt": "2024-03-10T09:45:00Z"
+    },
+    {
+      "recipeName": "Tacos",
+      "recipeImage": "https://i.ibb.co/0fpLNz4/Beef-Tacos-768x575.jpg",
+      "ingredients": "Tortillas, Beef, Lettuce, Cheese, Salsa",
+      "country": "Mexico",
+      "category": "Street Food",
+      "creatorEmail": "chef4@example.com",
+      "creatorName": "Chef Juan",
+      "creatorPhotoUrl": "https://i.ibb.co/bKBrtZT/handsome-young-man-with-arms-crossed-white-background-1.jpg",
+      "watchCount": ["viewer7@example.com", "viewer8@example.com", "viewer9@example.com", "viewer9@example.com", "viewer9@example.com", "viewer9@example.com"],
+      "createdAt": "2024-02-20T11:15:00Z"
+    },
+    {
+      "recipeName": "Poutine",
+      "recipeImage": "https://i.ibb.co/zQnKzZn/Poutine-7-500x375.jpg",
+      "ingredients": "French Fries, Cheese Curds, Gravy",
+      "country": "Canada",
+      "category": "Comfort Food",
+      "creatorEmail": "chef5@example.com",
+      "creatorName": "Chef Marie",
+      "creatorPhotoUrl": "https://i.ibb.co/bKBrtZT/handsome-young-man-with-arms-crossed-white-background-1.jpg",
+      "watchCount": ["viewer7@example.com", "viewer8@example.com", "viewer9@example.com", "viewer9@example.com", "viewer9@example.com", "viewer9@example.com", "viewer9@example.com"],
+      "createdAt": "2024-01-15T17:00:00Z"
+    }
+  ]
+  
