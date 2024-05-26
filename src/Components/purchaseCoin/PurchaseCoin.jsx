@@ -1,5 +1,4 @@
 /* eslint-disable react/no-unescaped-entities */
-import SharedTitle from "../Shared/SharedTitle/SharedTitle";
 
 const PurchaseCoin = () => {
     return (
