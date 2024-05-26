@@ -4,6 +4,7 @@ import { GrLinkNext } from "react-icons/gr";
 import SharedTitle from "../Shared/SharedTitle/SharedTitle";
 import { useForm } from "react-hook-form";
 const AllRecipes = () => {
+    const [search, setSearch] = useState('');
     const [allRecipes, setAllRecipes] = useState(null)
     useEffect(() => {
         fetch('/recepies.json')
@@ -11,8 +12,19 @@ const AllRecipes = () => {
             .then(data => setAllRecipes(data))
     }, [])
     // console.log(allRecipes);
+
+    
     const { register, handleSubmit } = useForm();
     const onSubmit = data => console.log(data);
+
+
+    const handleInputChange = (e) => {
+        setSearch(e.target.value);
+      };
+    
+      const handleClick = () => {
+        console.log(search);
+      };
     return (
         <div className=" pt-28 md:pt-36 md:px-10 px-5">
             <SharedTitle subtitle={'Delicious Recipes from Our Community'} title={'Recipes'} />
@@ -20,25 +32,25 @@ const AllRecipes = () => {
                 <div className="flex items-center justify-center">
                     <div className="flex lg:flex-row flex-col-reverse  lg:gap-20 md:gap-8 gap-4 lg:justify-between  items-center lg:my-10 md:my-8 my-4"  >
                         <div className="relative flex items-center">
-                            <input {...register("recipeName", { required: true })} type='text' placeholder='Recipe name'
+                            <input name="search" type='text' placeholder='Search' onChange={handleInputChange}
                                 className="pr-4 pl-14 py-3 lg:text-lg md:text-md text-sm  text-black rounded lg:w-[500px] md:w-[440px] w-[380px] bg-white border-b border-gray-400 focus:border-b outline-none focus:border-green-600" />
-                            <div className="absolute left-4">
-                                <img src="https://cdn-icons-png.flaticon.com/128/9367/9367798.png" alt="" className="w-10" />
+                            <div className="absolute left-4" onClick={() => handleClick()}>
+                                <img src="https://cdn-icons-png.flaticon.com/128/9367/9367798.png" alt="" className="w-8 h-8" />
                             </div>
                         </div>
                         <div className="flex lg:gap-10 md:gap-6 gap-6">
                             <div className="relative flex items-center">
-                                <input {...register("recipeName", { required: true })} type='text' placeholder='Recipe name'
+                                <input {...register("country")} type='text' placeholder='Country'
                                     className="pr-4 pl-14 py-3 lg:text-lg md:text-md text-sm  text-black rounded lg:w-[200px] md:w-[150px] w-[120px] bg-white border-b border-gray-400 focus:border-b outline-none focus:border-green-600" />
                                 <div className="absolute left-4">
-                                    <img src="https://cdn-icons-png.flaticon.com/128/9367/9367798.png" alt="" className="w-10" />
+                                    <img src="https://cdn-icons-png.flaticon.com/128/2947/2947656.png" alt="" className="w-8 h-8" />
                                 </div>
                             </div>
                             <div className="relative flex items-center">
-                                <input {...register("recipeName", { required: true })} type='text' placeholder='Recipe name'
+                                <input {...register("category")} type='text' placeholder='Category'
                                     className="pr-4 pl-14 py-3 lg:text-lg md:text-md text-sm  text-black rounded lg:w-[200px] md:w-[150px] w-[120px] bg-white border-b border-gray-400 focus:border-b outline-none focus:border-green-600" />
                                 <div className="absolute left-4">
-                                    <img src="https://cdn-icons-png.flaticon.com/128/9367/9367798.png" alt="" className="w-10" />
+                                    <img src="https://cdn-icons-png.flaticon.com/128/14264/14264148.png" alt="" className="w-8 h-8" />
                                 </div>
                             </div>
                             <button type="submit" className="w-fit inputButton">
