@@ -47,7 +47,7 @@ const AllRecipes = () => {
                                 </div>
                             </div>
                             <div className="relative flex items-center">
-                                <input {...register("category")} type='text' placeholder='Category'
+                                <input {...register("category")}  type='text' placeholder='Category'
                                     className="pr-4 pl-14 py-3 lg:text-lg md:text-md text-sm  text-black rounded lg:w-[200px] md:w-[150px] w-[120px] bg-white border-b border-gray-400 focus:border-b outline-none focus:border-green-600" />
                                 <div className="absolute left-4">
                                     <img src="https://cdn-icons-png.flaticon.com/128/14264/14264148.png" alt="" className="w-8 h-8" />
@@ -63,7 +63,7 @@ const AllRecipes = () => {
                 </div>
 
             </form>
-            <div className="flex flex-col justify-center items-center lg:gap-14 md:gap-12 gap-10 ">
+            <div className="flex flex-col justify-center items-center lg:gap-14 md:gap-12 gap-10 lg:mb-20 md:mb-10 mb-8">
                 {
                     allRecipes?.map((recipe, idx) => <div key={idx} className="lg:mt-10 md:mt-8 mt-6 group flex shadow-lg rounded-lg justify-center lg:gap-6 md:gap-4 gap-2 lg:w-[800px] md:w-[600px]">
                         <div>

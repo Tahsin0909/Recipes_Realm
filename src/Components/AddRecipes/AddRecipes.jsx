@@ -53,7 +53,7 @@ const AddRecipes = () => {
 
                     {/* <input {...register("exampleRequired", { required: true })} /> */}
                     {/* errors will return when field validation fails  */}
-                    {errors.exampleRequired && <span>This field is required</span>}
+                    
                     <div className="flex md:flex-row flex-col justify-center items-center lg:gap-10  gap-6">
                         <div className="lg:space-y-8 md:space-y-6 space-y-6 w-full">
                             <div>
@@ -89,8 +89,8 @@ const AddRecipes = () => {
                             </svg>
                             Upload file
 
-                            <input {...register("image")} type="file" id='uploadFile1' className="hidden" />
-
+                            <input {...register("image", {required:true})}  type="file" id='uploadFile1' className="hidden" />
+                            {errors.image && <span>This field is required</span>}
                             <p className="text-xs font-medium text-gray-400 mt-2">PNG, JPG SVG, WEBP are Allowed.</p>
                         </label>
                     </div>
