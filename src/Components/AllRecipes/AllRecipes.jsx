@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { GrLinkNext } from "react-icons/gr";
@@ -22,8 +23,14 @@ const AllRecipes = () => {
     const { AuthUser } = useContext(AuthContext)
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
-        axiosPublic.get(`/suggestion?country=${data.country}&category=${data.category}`)
-            .then(data => setAllRecipes(data.data))
+        console.log(data);
+        if(data. country == ' ' && data.category  == ' '){
+            console.log('Enter some value');
+        }
+        if (data.country || data.category) {
+            axiosPublic.get(`/suggestion?country=${data.country}&category=${data.category}`)
+                .then(data => setAllRecipes(data.data))
+        }
     }
 
 
@@ -36,7 +43,7 @@ const AllRecipes = () => {
             .then(data => setAllRecipes(data.data))
     };
 
-    const habdlePurchase = (id) =>{
+    const habdlePurchase = (id) => {
         axiosPublic.put(`/recipes/${id}`, { "email": AuthUser?.email })
     }
     return (
