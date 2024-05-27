@@ -8,10 +8,10 @@ import { ContextApi } from './Context/ContextApi';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 function App() {
-
+  const queryClient = new QueryClient()
   return (
     <React.StrictMode>
-      <QueryClientProvider client={QueryClient}>
+      <QueryClientProvider client={queryClient}>
         <ContextApi>
           <RouterProvider router={router} />
         </ContextApi>
