@@ -6,23 +6,27 @@ import { AuthContext } from "../../Context/ContextApi";
 const Recipes = () => {
     const axiosPublic = useAxiosPublic()
     const [data, setData] = useState(null)
+    const [loading, setLoading] = useState(false)
     const url = useParams()
     console.log(url.id);
     const { AuthUser } = useContext(AuthContext)
     useEffect(() => {
-       AuthUser && axiosPublic.get(`/recipes/${url.id}`, { "email": AuthUser?.email })
-            .then(data => setData(data.data))
-    }, [ AuthUser])
+        AuthUser && axiosPublic.get(`/recipes/${url.id}`, { "email": AuthUser?.email })
+            .then(data => { setData(data.data), setLoading(false) })
+    }, [AuthUser])
     console.log(data);
     return (
         <div className=" pt-28 md:pt-36 md:px-10 px-5">
             <div>
                 {
-                    data?.map((recipes, idx) => <div key={idx}>
-                        <p>{recipes.recipeName}</p>
-                        <img src={recipes.recipeImage} alt="" className="w-40" />
-                        <p>status: {recipes.status}</p>
-                    </div>)
+                    loading ? <p>Loading</p> :
+                        <div >
+                            <p>{data?.recipeName}</p>
+                            <img src={data?.recipeImage} alt="" className="w-40" />
+                            <p>status: {data?.status}</p>
+                        </div>
+
+
                 }
             </div>
         </div>
