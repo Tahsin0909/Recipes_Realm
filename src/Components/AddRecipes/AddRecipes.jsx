@@ -2,7 +2,13 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import '../../../src/index.css'
 import SharedTitle from "../Shared/SharedTitle/SharedTitle";
+import { useContext } from "react";
+import { AuthContext } from "../../Context/ContextApi";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
+import toast, { Toaster } from "react-hot-toast";
 const AddRecipes = () => {
+    const { AuthUser } = useContext(AuthContext)
+    const axiosPublic = useAxiosPublic()
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = async data => {
         const image = data.image[0]
@@ -29,14 +35,23 @@ const AddRecipes = () => {
                     youtubeEmbedCode: data.video,
                     country: data.country,
                     category: data.Category,
-                    creatorEmail: "email",
-                    creatorName: "string",
-                    creatorPhotoUrl: 'image',
+                    creatorEmail: AuthUser.email,
+                    creatorName: AuthUser.displayName,
+                    creatorPhotoUrl: AuthUser.photoURL,
                     watchCount: 0,
                     purchasedBy: [],
                     createdAt: "timestamp"
                 }
-                console.log(newRecipes);
+                // console.log(newRecipes);
+                axiosPublic.post(`/recipes/${AuthUser.email}`, newRecipes)
+                    .then(res => {
+                        // console.log(res.data);
+                        if (res.data.insertedId || (res.data.modifiedCount > 0 || res.data.matchedCount > 0 || res)) {
+                            toast.success(`Recipes Added SuccessFull`, {
+                                id: 'logIn',
+                            })
+                        }
+                    })
                 reset()
             }
         }
@@ -53,7 +68,7 @@ const AddRecipes = () => {
 
                     {/* <input {...register("exampleRequired", { required: true })} /> */}
                     {/* errors will return when field validation fails  */}
-                    
+
                     <div className="flex md:flex-row flex-col justify-center items-center lg:gap-10  gap-6">
                         <div className="lg:space-y-8 md:space-y-6 space-y-6 w-full">
                             <div>
@@ -89,7 +104,7 @@ const AddRecipes = () => {
                             </svg>
                             Upload file
 
-                            <input {...register("image", {required:true})}  type="file" id='uploadFile1' className="hidden" />
+                            <input {...register("image", { required: true })} type="file" id='uploadFile1' className="hidden" />
                             {errors.image && <span>This field is required</span>}
                             <p className="text-xs font-medium text-gray-400 mt-2">PNG, JPG SVG, WEBP are Allowed.</p>
                         </label>
@@ -143,6 +158,10 @@ const AddRecipes = () => {
             <div>
 
             </div>
+            <Toaster
+                position="bottom-right"
+                reverseOrder={false}
+            />
         </div>
     );
 };

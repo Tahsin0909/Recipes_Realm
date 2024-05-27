@@ -16,15 +16,12 @@ const GoogleLogin = () => {
                     email: result.user.email,
                     photoUrl: result.user.photoURL,
                 }
-                toast.success(`Authenticating as ${result.user.email}`, {
-                    id: 'logIn',
-                })
                 axiosPublic.post(`/users/${result.user.email}`, User)
                     .then(res => {
                         // console.log(res.data);
-                        if (res.data.insertedId || (res.data.modifiedCount > 0 || res.data.matchedCount > 0)) {
+                        if (res.data.insertedId || (res.data.modifiedCount > 0 || res.data.matchedCount > 0 || res)) {
                             toast.success(`Authenticating as ${result.user.email}`, {
-                                id: 'logIn',
+                                id: 'confirmation',
                             })
                         }
                     })
