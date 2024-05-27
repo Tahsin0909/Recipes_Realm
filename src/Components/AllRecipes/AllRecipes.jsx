@@ -3,28 +3,37 @@ import { Link } from "react-router-dom";
 import { GrLinkNext } from "react-icons/gr";
 import SharedTitle from "../Shared/SharedTitle/SharedTitle";
 import { useForm } from "react-hook-form";
+import useRecipes from "../../Hooks/useRecipes";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
+
+
+
+
 const AllRecipes = () => {
+    const axiosPublic = useAxiosPublic()
     const [search, setSearch] = useState('');
     const [allRecipes, setAllRecipes] = useState(null)
+    const [recipesData, isPending, refetch] = useRecipes()
     useEffect(() => {
-        fetch('/recepies.json')
-            .then(res => res.json())
-            .then(data => setAllRecipes(data))
-    }, [])
-    // console.log(allRecipes);
+        setAllRecipes(recipesData)
+    }, [recipesData])
+    console.log(allRecipes);
 
-    
     const { register, handleSubmit } = useForm();
-    const onSubmit = data => console.log(data);
+    const onSubmit = data => {
+        axiosPublic.get(`/suggestion?country=${data.country}&category=${data.category}`)
+            .then(data => setAllRecipes(data.data))
+    }
 
 
     const handleInputChange = (e) => {
         setSearch(e.target.value);
-      };
-    
-      const handleClick = () => {
-        console.log(search);
-      };
+    };
+
+    const handleClick = () => {
+        axiosPublic.get(`/search?q=${search}`)
+            .then(data => setAllRecipes(data.data))
+    };
     return (
         <div className=" pt-28 md:pt-36 md:px-10 px-5">
             <SharedTitle subtitle={'Delicious Recipes from Our Community'} title={'Recipes'} />
@@ -47,7 +56,7 @@ const AllRecipes = () => {
                                 </div>
                             </div>
                             <div className="relative flex items-center">
-                                <input {...register("category")}  type='text' placeholder='Category'
+                                <input {...register("category")} type='text' placeholder='Category'
                                     className="pr-4 pl-14 py-3 lg:text-lg md:text-md text-sm  text-black rounded lg:w-[200px] md:w-[150px] w-[120px] bg-white border-b border-gray-400 focus:border-b outline-none focus:border-green-600" />
                                 <div className="absolute left-4">
                                     <img src="https://cdn-icons-png.flaticon.com/128/14264/14264148.png" alt="" className="w-8 h-8" />
@@ -67,7 +76,7 @@ const AllRecipes = () => {
                 {
                     allRecipes?.map((recipe, idx) => <div key={idx} className="lg:mt-10 md:mt-8 mt-6 group flex shadow-lg rounded-lg justify-center lg:gap-6 md:gap-4 gap-2 lg:w-[800px] md:w-[600px]">
                         <div>
-                            <p className=" absolute bg-[#2F4F4F] bg-opacity-35 lg:translate-x-[300px] lg:translate-y-[250px] md:translate-x-[180px] md:translate-y-[160px] translate-x-[100px] translate-y-[160px] lg:px-4 lg:py-2 md:px-2 md:py-1 p-1 font-bold text-white rounded-lg md:text-base text-xs">Purchase: {recipe.watchCount.length}</p>
+                            <p className=" absolute bg-[#2F4F4F] bg-opacity-35 lg:translate-x-[300px] lg:translate-y-[250px] md:translate-x-[180px] md:translate-y-[160px] translate-x-[100px] translate-y-[160px] lg:px-4 lg:py-2 md:px-2 md:py-1 p-1 font-bold text-white rounded-lg md:text-base text-xs">Purchase: {recipe.watchCount?.length}</p>
                             <Link to={`/${idx}?country=${recipe.country}&category=${recipe.category}`}>
                                 <button className="absolute hidden group-hover:flex items-center lg:gap-2 gap-1 lg:border-2 border lg:translate-x-[140px] lg:translate-y-[120px] md:translate-x-[90px] md:translate-y-[80px] translate-x-[40px] translate-y-[80px] lg:px-4 lg:py-2 p-2 lg:text-lg md:text-base text-sm text-white rounded-full font-bold active:scale-95 transition-all">View Details <GrLinkNext /> </button>
                             </Link>
