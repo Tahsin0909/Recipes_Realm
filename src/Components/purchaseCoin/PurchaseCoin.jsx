@@ -69,7 +69,7 @@ const PurchaseCoin = () => {
                     </div>
                     <div className="p-4">
                         <button
-                            className="w-full bg-[#2F4F4F] text-white rounded-full px-4 py-2 hover:bg-green-700 focus:outline-none focus:shadow-outline-green active:bg-green-800"
+                            className="w-full bg-[#2F4F4F] text-white rounded-full px-4 py-2 hover:bg-[#8B4513] active:scale-95 transition-all focus:outline-none focus:shadow-outline-green active:bg-[#8B4513]"
                         >
                             Select Plan
                         </button>
@@ -139,7 +139,7 @@ const PurchaseCoin = () => {
                     </div>
                     <div className="p-4">
                         <button
-                            className="w-full bg-[#2F4F4F] text-white rounded-full px-4 py-2 hover:bg-green-700 focus:outline-none focus:shadow-outline-green active:bg-green-800"
+                            className="w-full bg-[#2F4F4F] text-white rounded-full px-4 py-2 hover:bg-[#8B4513] active:scale-95 transition-all focus:outline-none focus:shadow-outline-green active:bg-[#8B4513]"
                         >
                             Select Plan
                         </button>
@@ -209,7 +209,7 @@ const PurchaseCoin = () => {
                     </div>
                     <div className="p-4">
                         <button
-                            className="w-full bg-[#2F4F4F] text-white rounded-full px-4 py-2 hover:bg-green-700 focus:outline-none focus:shadow-outline-green active:bg-green-800"
+                            className="w-full bg-[#2F4F4F] text-white rounded-full px-4 py-2 hover:bg-[#8B4513] active:scale-95 transition-all focus:outline-none focus:shadow-outline-green active:bg-[#8B4513]"
                         >
                             Select Plan
                         </button>

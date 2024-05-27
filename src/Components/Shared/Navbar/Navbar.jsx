@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { FcGoogle } from "react-icons/fc";
+import GoogleLogin from "../GoogleLogin/GoogleLogin";
+
 const Navbar = () => {
     const location = useLocation()
     const [navToggle, setNavToggle] = useState(false)
@@ -138,11 +139,8 @@ const Navbar = () => {
                                 <p className="font-bold">50</p>
                             </div>
                         </Link>
-                        <FcGoogle className="md:text-4xl text-3xl hover:scale-[1.2] transition-all delay-100" />
-                        <div>
-                            <img className="w-8 h-8 hover:scale-[1.2] transition-all delay-100" src="https://i.ibb.co/gd4f9RD/logout-7884039-removebg-preview.png" alt="" />
-                        </div>
-                        <button id="toggleOpen" onClick={() => handleClick()} className='lg:hidden ml-7'>
+                        <GoogleLogin/>
+                        <button id="toggleOpen" onClick={handleClick} className='lg:hidden ml-7'>
                             <svg className="w-7 h-7" fill={navToggle ? '#000000' : location.pathname === '/' ? '#ffffff' : '#000000'}
                                 viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                 <path fillRule="evenodd"
