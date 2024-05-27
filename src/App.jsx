@@ -5,14 +5,17 @@ import {
 import './App.css'
 import { router } from './router/AppRoutes'
 import { ContextApi } from './Context/ContextApi';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 function App() {
 
   return (
     <React.StrictMode>
-      <ContextApi>
-        <RouterProvider router={router} />
-      </ContextApi>
+      <QueryClientProvider client={QueryClient}>
+        <ContextApi>
+          <RouterProvider router={router} />
+        </ContextApi>
+      </QueryClientProvider>
     </React.StrictMode>
   )
 }
