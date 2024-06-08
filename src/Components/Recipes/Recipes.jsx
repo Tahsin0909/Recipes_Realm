@@ -8,13 +8,13 @@ const Recipes = () => {
     const [data, setData] = useState(null)
     const [loading, setLoading] = useState(false)
     const url = useParams()
-    console.log(url.id);
+    // console.log(url.id);
     const { AuthUser } = useContext(AuthContext)
     useEffect(() => {
         AuthUser && axiosPublic.get(`/recipes/${url.id}`, { "email": AuthUser?.email })
             .then(data => { setData(data.data), setLoading(false) })
     }, [AuthUser])
-    console.log(data);
+    // console.log(data);
     return (
         <div className=" pt-28 md:pt-36 md:px-10 px-5">
             <div>
@@ -22,7 +22,7 @@ const Recipes = () => {
                     loading ? <p>Loading</p> :
                         <div >
                             <p>{data?.recipeName}</p>
-                            <img src={data?.recipeImage} alt="" className="w-40" />
+                            <img className="w-[700px] shadow-2xl rounded-md z-40" src={data?.recipeImage} alt=""  />
                             <p>status: {data?.status}</p>
                         </div>
 
